@@ -112,10 +112,10 @@ Cristian, describe your scripts here.
 WiFiEye supports plugins to process CSI data. A plugin is a simple C-file. It is complied independently from WiFiEye. 
 Developing filter plugins is simple and can be learned within minutes. A filter plugin has to provide a couple of functions, which are being called trough WiFiEye using dynamic linking.
 
-The only code a plugin needs to import from WiFiEye is the structure _CSIData_ from [src/CSIData.h](src/CSIData.h).
+The only code a plugin needs to import from WiFiEye is the structure _CSIData_ from [studio/src/CSIData.h](studio/src/CSIData.h).
 A function called _filter_run()_ obtains a pointer to a filled _CSIData_ structure. The processing plugin can modify the data in this structure. WiFiEye studio will read the changes back after _filter_run()_ has finished.
 
-Learning how a filter is written can be done by examining the extensively commented file [src/filters/sample_filter.c](src/filters/sample_filter.c).
+Learning how a filter is written can be done by examining the extensively commented file [studio/src/filters/sample_filter.c](studio/src/filters/sample_filter.c).
 This file implements a fully-functional sample filter with minimalistic code effort. Each function that is  contains a detailed description as a comment. It can also serfe as a sceleton for writing a custom filter.
 With [src/filters/sample_filter.c](src/filters/sample_filter.c), it is straight-forward two develop a custom plugin - no additional documentation needed.
 
