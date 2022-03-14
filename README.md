@@ -97,10 +97,10 @@ WiFiEye can stream the preprocessed CSI data to any external program, e.g., a cl
 This is controlled form the _Real-Time Classification_ tab.
 Here, any external program can be executed. It is possible to specify the command to be executed and its command line parameters.
 
-The CSI data is written to the standard input of the launched executable. The format is the _Simple CSI format_, which is documented in [doc/fileformats.pdf](doc/fileformats.pdf).
+The CSI data is written to the standard input of the launched executable. The format is the _Simple CSI format_, which is documented in [doc/fileFormats.pdf](doc/fileFormats.pdf).
 The classifier can write its classification results to its standard output, which is imported back into WiFiEye. WiFiEye can annotate these results in the real-time visualization.
 Though it can only launch one executable, this executable can run multiple classifier. WiFiEye supports displaying the results of multiple classifiers. Hence, the launched executable needs to launch additional
-classifiers, or needs to include multiple of them in one executable. The data fromat for importing results back into WiFiEye is also documented in [doc/fileformats.pdf](doc/fileformats.pdf).
+classifiers, or needs to include multiple of them in one executable. The data fromat for importing results back into WiFiEye is also documented in [doc/fileFormats.pdf](doc/fileFormats.pdf).
 
 A pair of scripts for accessing tensorflow to 1) train  a classifier using previously recorded data and 2) perform live classification using the real-time export mechanism is included in WiFiEye. 
 They are described below.
