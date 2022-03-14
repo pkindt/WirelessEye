@@ -117,7 +117,7 @@ A function called _filter_run()_ obtains a pointer to a filled _CSIData_ structu
 
 Learning how a filter is written can be done by examining the extensively commented file [studio/src/filters/sample_filter.c](studio/src/filters/sample_filter.c).
 This file implements a fully-functional sample filter with minimalistic code effort. Each function that is  contains a detailed description as a comment. It can also serfe as a sceleton for writing a custom filter.
-With [src/filters/sample_filter.c](src/filters/sample_filter.c), it is straight-forward two develop a custom plugin - no additional documentation needed.
+With [studio/src/filters/sample_filter.c](studio/src/filters/sample_filter.c), it is straight-forward two develop a custom plugin - no additional documentation needed.
 
 # Developing for WiFiEye studio #
 If you want to modify or extend WiFiEyeStudio, you find a full Doxygen documentation of all files of WiFiEye Studio in the [doc](doc) subdirecory.
