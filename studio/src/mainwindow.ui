@@ -1,0 +1,2033 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1299</width>
+    <height>847</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>WiFiEye Studio</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="csiguiresources.qrc">
+    <normaloff>:/icons/icons/logo.png</normaloff>:/icons/icons/logo.png</iconset>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonTextBesideIcon</enum>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0" rowspan="2">
+     <widget class="QTabWidget" name="tabWidgetMain">
+      <property name="statusTip">
+       <string/>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tabCSI_2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <attribute name="icon">
+        <iconset resource="csiguiresources.qrc">
+         <normaloff>:/icons/icons/Visualization.svg</normaloff>:/icons/icons/Visualization.svg</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Visualization</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <layout class="QVBoxLayout" name="layoutOuter">
+          <item>
+           <widget class="QLabel" name="labelAmplitude">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;CSI Amplitude&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_13">
+            <item>
+             <widget class="QLabel" name="labelSpacerAmplitudeLeft">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>37</width>
+                <height>28</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>37</width>
+                <height>28</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Sub-&lt;br/&gt;carrier&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QScrollArea" name="saAmplitude">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="whatsThis">
+               <string>Amplitude ofthe  CSI data</string>
+              </property>
+              <property name="verticalScrollBarPolicy">
+               <enum>Qt::ScrollBarAlwaysOff</enum>
+              </property>
+              <property name="horizontalScrollBarPolicy">
+               <enum>Qt::ScrollBarAsNeeded</enum>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_2">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>1155</width>
+                 <height>125</height>
+                </rect>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_13">
+              <item>
+               <widget class="QSlider" name="slLBAmplitude">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="toolTip">
+                 <string>Values below lowerCutoff and UpperCutoff (which are defined as a certain percentage of the min and max data) are cut off. The remaining values between them are scaled linearly. </string>
+                </property>
+                <property name="statusTip">
+                 <string>Scale Amplitude Colors - Lower Cutoff Value</string>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+                <property name="pageStep">
+                 <number>1</number>
+                </property>
+                <property name="value">
+                 <number>0</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="cbUpdateAmplitude">
+                <property name="toolTip">
+                 <string>If checked, the minimum and maximum CSI amplitudes are recored continuously, and the colors of all other CSI amplitude values are scaled according to the recorded min and max value.</string>
+                </property>
+                <property name="statusTip">
+                 <string>Continuously update range of CSI amplitudes.</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_14">
+              <item>
+               <widget class="QSlider" name="slUBAmplitude">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="toolTip">
+                 <string>Values below lowerCutoff and UpperCutoff (which are defined as a certain percentage of the min and max data) are cut off. The remaining values between them are scaled linearly. </string>
+                </property>
+                <property name="statusTip">
+                 <string>Scale Amplitude Colors - Upper Cutoff Value</string>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+                <property name="pageStep">
+                 <number>1</number>
+                </property>
+                <property name="value">
+                 <number>1000</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pbResetMaxAmplitude">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>Will reset the recorded minimum and maximum value. These values are used to scale the colors of recieved CSI data. </string>
+                </property>
+                <property name="statusTip">
+                 <string>Reset observed minimum and maximum CSI amplitude.</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="csiguiresources.qrc">
+                  <normaloff>:/icons/icons/reload.svg</normaloff>:/icons/icons/reload.svg</iconset>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelPhase">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Phase&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_15">
+            <item>
+             <widget class="QLabel" name="labelSubcarrierPhase">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>37</width>
+                <height>28</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>37</width>
+                <height>28</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Sub-&lt;br/&gt;carrier&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QScrollArea" name="saPhase">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="whatsThis">
+               <string>Phase of the CSI data</string>
+              </property>
+              <property name="verticalScrollBarPolicy">
+               <enum>Qt::ScrollBarAlwaysOff</enum>
+              </property>
+              <property name="horizontalScrollBarPolicy">
+               <enum>Qt::ScrollBarAlwaysOff</enum>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_4">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>1155</width>
+                 <height>124</height>
+                </rect>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_15">
+              <item>
+               <widget class="QSlider" name="slLBPhase">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="toolTip">
+                 <string>Values below lowerCutoff and UpperCutoff (which are defined as a certain percentage of the min and max data) are cut off. The remaining values between them are scaled linearly. </string>
+                </property>
+                <property name="statusTip">
+                 <string>Scale Phase Colors - Lower Cutoff Value</string>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+                <property name="pageStep">
+                 <number>1</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="cbUpdatePhase">
+                <property name="toolTip">
+                 <string>If checked, the minimum and maximum CSI phases are recored continuously, and the colors of all other received CSI phase values are scaled according to the recorded min and max value.</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_16">
+              <item>
+               <widget class="QSlider" name="slUBPhase">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="toolTip">
+                 <string>Values below lowerCutoff and UpperCutoff (which are defined as a certain percentage of the min and max data) are cut off. The remaining values between them are scaled linearly. </string>
+                </property>
+                <property name="statusTip">
+                 <string>Scale Phase Colors - Upper Cutoff Value</string>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+                <property name="pageStep">
+                 <number>1</number>
+                </property>
+                <property name="value">
+                 <number>1000</number>
+                </property>
+                <property name="sliderPosition">
+                 <number>1000</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pbResetMaxPhase">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>Will reset the recorded minimum and maximum CSI phase. These values are used to scale the colors of recieved CSI  phase data. </string>
+                </property>
+                <property name="statusTip">
+                 <string>Reset observed minimum and maximum CSI amplitude.</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="csiguiresources.qrc">
+                  <normaloff>:/icons/icons/reload.svg</normaloff>:/icons/icons/reload.svg</iconset>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="layoutRSSI">
+            <item>
+             <widget class="QLabel" name="labelRSSI">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;RSSI&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout">
+              <item>
+               <widget class="QLabel" name="labelPlaceholderRSSILeft">
+                <property name="minimumSize">
+                 <size>
+                  <width>37</width>
+                  <height>28</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>43</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>[dBm]</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QScrollArea" name="saRSSI">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="whatsThis">
+                 <string>RSSI of the CSI data</string>
+                </property>
+                <property name="horizontalScrollBarPolicy">
+                 <enum>Qt::ScrollBarAlwaysOff</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>1159</width>
+                   <height>101</height>
+                  </rect>
+                 </property>
+                </widget>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="labelPlaceholderRSSIRight">
+                <property name="minimumSize">
+                 <size>
+                  <width>43</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>43</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelClassif">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Classifier Output&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_16">
+            <item>
+             <widget class="QLabel" name="labelClassifOutput">
+              <property name="minimumSize">
+               <size>
+                <width>37</width>
+                <height>28</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>37</width>
+                <height>28</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Output&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QScrollArea" name="saClassif">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="whatsThis">
+               <string>Output of a classifier using live export</string>
+              </property>
+              <property name="verticalScrollBarPolicy">
+               <enum>Qt::ScrollBarAlwaysOff</enum>
+              </property>
+              <property name="horizontalScrollBarPolicy">
+               <enum>Qt::ScrollBarAlwaysOff</enum>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_5">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>1161</width>
+                 <height>124</height>
+                </rect>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="labelClassifSpacer">
+              <property name="minimumSize">
+               <size>
+                <width>43</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>43</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="buttonBarLayout">
+            <property name="sizeConstraint">
+             <enum>QLayout::SetMinAndMaxSize</enum>
+            </property>
+            <property name="topMargin">
+             <number>10</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="pbConnect">
+              <property name="statusTip">
+               <string>Connect to CSI Server/Raspberry Pi</string>
+              </property>
+              <property name="whatsThis">
+               <string>Connect to CSI Server/Raspberry Pi</string>
+              </property>
+              <property name="text">
+               <string>Connect</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>icons/connect.png</normaloff>icons/connect.png</iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pbRecord">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="toolTip">
+               <string>Write data to CSV  file. The filename usually contains the current time and is announced on the console.</string>
+              </property>
+              <property name="statusTip">
+               <string>Write data to CSV  file. The filename usually contains the current time and is announced on the console.</string>
+              </property>
+              <property name="whatsThis">
+               <string>Write data to CSV  file. The filename contains the current time and is announced on the console.</string>
+              </property>
+              <property name="text">
+               <string>Record</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>icons/record.svg</normaloff>icons/record.svg</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="default">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Expanding</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>0</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_5">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="statusTip">
+               <string>Filter for certain MAC addresses only</string>
+              </property>
+              <property name="text">
+               <string>MAC Filter</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabSettings">
+       <attribute name="icon">
+        <iconset resource="csiguiresources.qrc">
+         <normaloff>:/icons/icons/settings.svg</normaloff>:/icons/icons/settings.svg</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Settings</string>
+       </attribute>
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="geometry">
+         <rect>
+          <x>-10</x>
+          <y>0</y>
+          <width>1271</width>
+          <height>751</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="tabConnection">
+         <attribute name="icon">
+          <iconset>
+           <normaloff>icons/connect.png</normaloff>icons/connect.png</iconset>
+         </attribute>
+         <attribute name="title">
+          <string>Connection</string>
+         </attribute>
+         <widget class="QGroupBox" name="groupBox_5">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>10</y>
+            <width>481</width>
+            <height>131</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>Connection</string>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
+          <widget class="QWidget" name="formLayoutWidget_5">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>441</width>
+             <height>91</height>
+            </rect>
+           </property>
+           <layout class="QFormLayout" name="formLayout_6">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_17">
+              <property name="text">
+               <string>Connection Type</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QRadioButton" name="rbConnetionTCP">
+              <property name="toolTip">
+               <string>Connect to an external Raspberry Pi that runs CSIServer over the network</string>
+              </property>
+              <property name="statusTip">
+               <string>Connect to an external Raspberry Pi that runs CSIServer over the network</string>
+              </property>
+              <property name="text">
+               <string>TCP Connection with Ser&amp;ver</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <layout class="QHBoxLayout" name="horizontalLayout_8">
+              <item>
+               <widget class="QLabel" name="label_9">
+                <property name="text">
+                 <string>Raspi IP or Hostname</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="leHostname">
+                <property name="statusTip">
+                 <string>IP or hostname of Raspberry Pi running CSIServer</string>
+                </property>
+                <property name="text">
+                 <string>raspberrypi</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="1">
+             <widget class="QRadioButton" name="rbConnectionUDP">
+              <property name="statusTip">
+               <string>Choose this if the software is directly executed on a Raspberry Pi</string>
+              </property>
+              <property name="text">
+               <string>UDP Broadcast on Port &amp;5500</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tabCSI">
+         <attribute name="icon">
+          <iconset resource="csiguiresources.qrc">
+           <normaloff>:/icons/icons/wireless.svg</normaloff>:/icons/icons/wireless.svg</iconset>
+         </attribute>
+         <attribute name="title">
+          <string>CSI</string>
+         </attribute>
+         <widget class="QGroupBox" name="groupBox_6">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>481</width>
+            <height>351</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>CSI Settings</string>
+          </property>
+          <widget class="QWidget" name="formLayoutWidget_6">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>441</width>
+             <height>271</height>
+            </rect>
+           </property>
+           <layout class="QFormLayout" name="formLayout_7">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_18">
+              <property name="text">
+               <string>Actual Channel Bandwith</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QComboBox" name="qcBandwidth">
+              <property name="toolTip">
+               <string>The channel Bandwith the Raspberry Pi is capturing with. Changing this here will not change it on the Raspberry Pi. Hence, first configure your Pi appropriately, and then select the matching option here. </string>
+              </property>
+              <property name="statusTip">
+               <string>The channel Bandwith the Raspberry Pi is capturing with</string>
+              </property>
+              <property name="currentText">
+               <string>80 MHz</string>
+              </property>
+              <property name="currentIndex">
+               <number>2</number>
+              </property>
+              <item>
+               <property name="text">
+                <string>20 MHZ</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>40 MHz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>80 MHz</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>MAC Filter</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QCheckBox" name="cbFilterFileRecording">
+              <property name="toolTip">
+               <string>Apply MAC filter to File recording. If disactivated, all frames from all MACs will be recored into files. </string>
+              </property>
+              <property name="statusTip">
+               <string>Apply MAC filter to File recording.</string>
+              </property>
+              <property name="text">
+               <string>Apply to File Recording</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QCheckBox" name="cbFilterLiveExport">
+              <property name="acceptDrops">
+               <bool>true</bool>
+              </property>
+              <property name="toolTip">
+               <string>Apply MAC filter to Filter for selected MACs when live-exporting to a classifier. Otherwise, the filter will be egnored and frames of all MACs will be exported.</string>
+              </property>
+              <property name="statusTip">
+               <string>Filter for selected MACs when live-exporting to a classifier.</string>
+              </property>
+              <property name="text">
+               <string>Apply for Live Export to Classifier</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>Display Bandwidth</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QComboBox" name="qcBandwidthDisplay">
+              <property name="toolTip">
+               <string>Display the channel as a channel with the corresponding bandwidth. The GUI will then reduce the bandwidth for displaying appropriately. Will only work  for bandwidths smaller than captured by the Raspberry Pi. </string>
+              </property>
+              <property name="statusTip">
+               <string>Display the channel as a channel with the corresponding bandwidth. </string>
+              </property>
+              <property name="currentText">
+               <string>80 MHz</string>
+              </property>
+              <property name="currentIndex">
+               <number>2</number>
+              </property>
+              <item>
+               <property name="text">
+                <string>20 MHZ</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>40 MHz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>80 MHz</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_6">
+              <property name="text">
+               <string>Export Bandwith</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QComboBox" name="qcBandwidthExport">
+              <property name="toolTip">
+               <string>Export the channel as a channel with the corresponding bandwidth.  This will affect recording to CSV files and live-exporting to a classififer. The GUI will then reduce the bandwidth for exporting appropriately. Will only work  for bandwidths smaller than captured by the Raspberry Pi. </string>
+              </property>
+              <property name="statusTip">
+               <string>Export the channel as a channel with the corresponding bandwidth</string>
+              </property>
+              <property name="currentText">
+               <string>80 MHz</string>
+              </property>
+              <property name="currentIndex">
+               <number>2</number>
+              </property>
+              <item>
+               <property name="text">
+                <string>20 MHZ</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>40 MHz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>80 MHz</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tabRecording">
+         <attribute name="icon">
+          <iconset>
+           <normaloff>icons/record.svg</normaloff>icons/record.svg</iconset>
+         </attribute>
+         <attribute name="title">
+          <string>Recording</string>
+         </attribute>
+         <widget class="QGroupBox" name="groupBox_7">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>481</width>
+            <height>101</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>Recording</string>
+          </property>
+          <widget class="QWidget" name="formLayoutWidget_7">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>451</width>
+             <height>71</height>
+            </rect>
+           </property>
+           <layout class="QFormLayout" name="formLayout_8">
+            <item row="1" column="0">
+             <widget class="QRadioButton" name="rbFilenameStatic">
+              <property name="toolTip">
+               <string>Use a static filename. If you use the same static filename twice, the previously recorded data will be overwritten. </string>
+              </property>
+              <property name="statusTip">
+               <string>Use a static filename. </string>
+              </property>
+              <property name="text">
+               <string>S&amp;tatic Filename:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="leStaticFilename">
+              <property name="statusTip">
+               <string>Static filename for recoring CSI data. If you use the same static filename twice, the previously recorded data will be overwritten. </string>
+              </property>
+              <property name="text">
+               <string>CSICapture.cvs</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QRadioButton" name="rbFilenameAutomatic">
+              <property name="toolTip">
+               <string>Determine a time-based filename automatically.  Filenames are unique, so there is no risk of overwriting previously recorded data.</string>
+              </property>
+              <property name="statusTip">
+               <string>Determine a time-based filename automatically. </string>
+              </property>
+              <property name="text">
+               <string>Automatic  Filename</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>110</y>
+            <width>481</width>
+            <height>131</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>Data Format (does not apply to live export)</string>
+          </property>
+          <widget class="QWidget" name="formLayoutWidget">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>451</width>
+             <height>91</height>
+            </rect>
+           </property>
+           <layout class="QFormLayout" name="formLayout">
+            <item row="1" column="0">
+             <widget class="QRadioButton" name="rbFileFormatBinary">
+              <property name="text">
+               <string>WifEye Binary</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QRadioButton" name="rbFileFormatCSVCompact">
+              <property name="text">
+               <string>Compact CSV (One Line per Frame)</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QRadioButton" name="rbFileFormatCSVSimple">
+              <property name="text">
+               <string>Simple  CSV (One Line per Subcarrier)</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QLabel" name="label_10">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>230</y>
+            <width>451</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The format of the exchanged data is specified in the file &lt;span style=&quot; font-style:italic;&quot;&gt;fileFormats.pdf&lt;/span&gt;,&lt;br/&gt; which can be found in the same folder as the WifEye executable&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tabDisplaying">
+         <attribute name="icon">
+          <iconset resource="csiguiresources.qrc">
+           <normaloff>:/icons/icons/Visualization.svg</normaloff>:/icons/icons/Visualization.svg</iconset>
+         </attribute>
+         <attribute name="title">
+          <string>Visualization</string>
+         </attribute>
+         <widget class="QGroupBox" name="groupBox_8">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>30</y>
+            <width>481</width>
+            <height>211</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>Generic Display Settings</string>
+          </property>
+          <widget class="QWidget" name="formLayoutWidget_8">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>441</width>
+             <height>171</height>
+            </rect>
+           </property>
+           <layout class="QFormLayout" name="formLayout_9">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_20">
+              <property name="text">
+               <string>Display Area Width</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QRadioButton" name="rbWidthAdjust">
+              <property name="toolTip">
+               <string>Make the size of the display area match the size of the window. For large windows, this might lead to high CPU loads.</string>
+              </property>
+              <property name="statusTip">
+               <string>Make the size of the display area match the size of the window.</string>
+              </property>
+              <property name="text">
+               <string>Ad&amp;just to Window</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QRadioButton" name="rbWidthStatic">
+              <property name="toolTip">
+               <string>Use a pre-defined size of the data displaying area. Can be used to reduce the CPU load. </string>
+              </property>
+              <property name="statusTip">
+               <string>Use a pre-defined size of the data displaying area. Can be used to reduce the CPU load. </string>
+              </property>
+              <property name="text">
+               <string>Static Si&amp;ze</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <layout class="QHBoxLayout" name="horizontalLayout_9">
+              <item>
+               <widget class="QSpinBox" name="spWidth">
+                <property name="toolTip">
+                 <string>Width of data displaying area. Small =&gt; low CPU load.</string>
+                </property>
+                <property name="statusTip">
+                 <string>Width of data displaying area.</string>
+                </property>
+                <property name="readOnly">
+                 <bool>false</bool>
+                </property>
+                <property name="suffix">
+                 <string>px</string>
+                </property>
+                <property name="prefix">
+                 <string/>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>999999999</number>
+                </property>
+                <property name="singleStep">
+                 <number>100</number>
+                </property>
+                <property name="value">
+                 <number>2000</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_22">
+              <property name="text">
+               <string>Scroll Delay</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <layout class="QHBoxLayout" name="horizontalLayout_10">
+              <item>
+               <widget class="QSpinBox" name="sbScrollDelay">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>80</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>Amount of scroll delay. A scroll delay of N implies that if N data rows have been arrived, the previous data is scrolled by N rows. Higher values reduce the CPU load.</string>
+                </property>
+                <property name="statusTip">
+                 <string>Amount of scroll delay. </string>
+                </property>
+                <property name="prefix">
+                 <string>x</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_6">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="label_23">
+              <property name="text">
+               <string>Refresh Period</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <layout class="QHBoxLayout" name="horizontalLayout_11">
+              <item>
+               <widget class="QSpinBox" name="sbRefreshPeriod">
+                <property name="minimumSize">
+                 <size>
+                  <width>80</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>Refresh Period for data displaying. This will determine the &quot;framerate&quot; of the animation.  The image will be refreshed whenever this period has passed. Higher values lower the CPU load but make the animation less fluent.</string>
+                </property>
+                <property name="statusTip">
+                 <string>Refresh Period for data displaying. This will determine the &quot;framerate&quot; of the animation. </string>
+                </property>
+                <property name="suffix">
+                 <string>ms</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+                <property name="value">
+                 <number>42</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_7">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>240</y>
+            <width>441</width>
+            <height>171</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>Signals to Display</string>
+          </property>
+          <widget class="QWidget" name="verticalLayoutWidget">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>30</y>
+             <width>291</width>
+             <height>131</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <widget class="QCheckBox" name="cbDisplayAmplitude">
+              <property name="toolTip">
+               <string>Display CSI Amplitude </string>
+              </property>
+              <property name="statusTip">
+               <string>Display CSI Amplitude </string>
+              </property>
+              <property name="text">
+               <string>Display Amplitude</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="cbDisplayPhase">
+              <property name="toolTip">
+               <string>Display CSI Phase</string>
+              </property>
+              <property name="statusTip">
+               <string>Display CSI Phase</string>
+              </property>
+              <property name="text">
+               <string>Display Phase</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="cbDisplayRSSI">
+              <property name="toolTip">
+               <string>Display Received Signal Strength Indicator. </string>
+              </property>
+              <property name="statusTip">
+               <string>Display Received Signal Strength Indicator. </string>
+              </property>
+              <property name="text">
+               <string>Display RSSI</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="cbDisplayClassifierOutput">
+              <property name="toolTip">
+               <string>Display classifier output.</string>
+              </property>
+              <property name="statusTip">
+               <string>Display classifier output.</string>
+              </property>
+              <property name="text">
+               <string>Display Graphical Classifier Output Widget</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab">
+         <attribute name="icon">
+          <iconset resource="csiguiresources.qrc">
+           <normaloff>:/icons/icons/preprocessing.svg</normaloff>:/icons/icons/preprocessing.svg</iconset>
+         </attribute>
+         <attribute name="title">
+          <string>Preprocessing</string>
+         </attribute>
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>471</width>
+            <height>101</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>FIlters</string>
+          </property>
+          <widget class="QWidget" name="formLayoutWidget_2">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>411</width>
+             <height>80</height>
+            </rect>
+           </property>
+           <layout class="QFormLayout" name="formLayout_2">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>Path to CSI Filters</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="leFilterPath">
+              <property name="toolTip">
+               <string>Relative or absolute path in which all  filter plugins (*.cfi) are stored. </string>
+              </property>
+              <property name="statusTip">
+               <string>Relative or absolute path in which all  filter plugins are stored. </string>
+              </property>
+              <property name="text">
+               <string>filters</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tabPreprocessing">
+       <attribute name="icon">
+        <iconset resource="csiguiresources.qrc">
+         <normaloff>:/icons/icons/preprocessing.svg</normaloff>:/icons/icons/preprocessing.svg</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Preprocessing</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QFrame" name="frameFilters">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Plain</enum>
+          </property>
+          <property name="lineWidth">
+           <number>0</number>
+          </property>
+          <layout class="QVBoxLayout" name="lyFrameFilters">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QScrollArea" name="saFilters">
+             <property name="frameShadow">
+              <enum>QFrame::Plain</enum>
+             </property>
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
+             <widget class="QWidget" name="scrollAreaWidgetContents_3">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1275</width>
+                <height>751</height>
+               </rect>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_4">
+               <item row="0" column="0">
+                <layout class="QVBoxLayout" name="laFilters"/>
+               </item>
+               <item row="1" column="0">
+                <widget class="QPushButton" name="pbRefreshFilters">
+                 <property name="toolTip">
+                  <string>Reloads all filters. All parameters will be reset. Filters might have been re-compiled, added or removed in the meantime. This will be accounted for.</string>
+                 </property>
+                 <property name="statusTip">
+                  <string>Reloads all filters.</string>
+                 </property>
+                 <property name="text">
+                  <string>Reload Filters</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="RTClassification_2">
+       <attribute name="icon">
+        <iconset resource="csiguiresources.qrc">
+         <normaloff>:/icons/icons/classification.svg</normaloff>:/icons/icons/classification.svg</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Real-Time Classification</string>
+       </attribute>
+       <widget class="QPushButton" name="pbRunClassifier">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>170</y>
+          <width>521</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Run Classifier</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lClassifierOutput">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>250</y>
+          <width>521</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Most recent output of the classifier.</string>
+        </property>
+        <property name="statusTip">
+         <string>Most recent output of the classifier.</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <property name="text">
+         <string>(Classifier not running)</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_28">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>230</y>
+          <width>261</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Most Recent Classifier Output:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="gridLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>521</width>
+          <height>151</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_26">
+           <property name="text">
+            <string>Arguments</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="leClassifierArguments">
+           <property name="statusTip">
+            <string>Command line parameters passed to the classifier's executable</string>
+           </property>
+           <property name="text">
+            <string>dummy_classifier.py</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_27">
+           <property name="text">
+            <string>Max. Classifier Output</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QSpinBox" name="sbMaxClass">
+           <property name="toolTip">
+            <string>Number of output classes. It is assumed that the classifier can group the input into this number of classes, which are indexed from 1 to this number.</string>
+           </property>
+           <property name="statusTip">
+            <string>Number of output classes.</string>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="value">
+            <number>6</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="leClassifierExecutable">
+           <property name="statusTip">
+            <string>Executable of the classifier to run.</string>
+           </property>
+           <property name="text">
+            <string>python3.8</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_25">
+           <property name="text">
+            <string>Executable</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Max. Classifier Certainty</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QDoubleSpinBox" name="dsbMaxClassCertainty">
+           <property name="toolTip">
+            <string>The classifier may annotate its classification with a certainty value, which is assumed to lie between 0 and the selceted value.</string>
+           </property>
+           <property name="statusTip">
+            <string>The classifier may annotate its classification with a certainty value, which is assumed to lie between 0 and the selceted value.</string>
+           </property>
+           <property name="value">
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QLabel" name="label_8">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>320</y>
+          <width>511</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The format of the exchanged data is specified in the file&lt;br/&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;fileFormats.pdf&lt;/span&gt;, which can be found in the same folder as the WifEye executable&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1299</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMain">
+    <property name="title">
+     <string>&amp;Main</string>
+    </property>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuDisplay_Signals">
+    <property name="title">
+     <string>Disp&amp;lay Signals</string>
+    </property>
+    <addaction name="actionAmplitude"/>
+    <addaction name="actionPhase"/>
+    <addaction name="actionRSSI"/>
+    <addaction name="actionClassifierOutput"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuWindow">
+    <property name="title">
+     <string>Wi&amp;ndow</string>
+    </property>
+    <addaction name="actionDetachFilters"/>
+    <addaction name="actionClearMACFilterList"/>
+   </widget>
+   <addaction name="menuMain"/>
+   <addaction name="menuDisplay_Signals"/>
+   <addaction name="menuWindow"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionQuit">
+   <property name="text">
+    <string>&amp;Quit</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+  </action>
+  <action name="actionAmplitude">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Amplitude</string>
+   </property>
+  </action>
+  <action name="actionPhase">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Phase</string>
+   </property>
+  </action>
+  <action name="actionRSSI">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;RSSI</string>
+   </property>
+  </action>
+  <action name="actionClassifierOutput">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Classifier Output</string>
+   </property>
+  </action>
+  <action name="actionDetachFilters">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Detach Filters</string>
+   </property>
+  </action>
+  <action name="actionClearMACFilterList">
+   <property name="text">
+    <string>&amp;Clear MAC Filter List</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="csiguiresources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>cbDisplayPhase</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>actionPhase</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>325</x>
+     <y>240</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPhase</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cbDisplayPhase</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>240</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAmplitude</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cbDisplayAmplitude</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>188</x>
+     <y>377</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbDisplayAmplitude</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>actionAmplitude</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>188</x>
+     <y>377</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRSSI</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cbDisplayRSSI</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>188</x>
+     <y>441</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionClassifierOutput</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cbDisplayClassifierOutput</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>188</x>
+     <y>473</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbDisplayClassifierOutput</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>actionClassifierOutput</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>188</x>
+     <y>473</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbDisplayRSSI</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>actionRSSI</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>188</x>
+     <y>441</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

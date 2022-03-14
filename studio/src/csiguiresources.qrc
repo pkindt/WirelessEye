@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>icons/connect.svg</file>
+        <file>icons/wireless.svg</file>
+        <file>icons/record.svg</file>
+        <file>icons/classification.svg</file>
+        <file>icons/preprocessing.svg</file>
+        <file>icons/settings.svg</file>
+        <file>icons/Visualization.svg</file>
+        <file>icons/reload.svg</file>
+        <file>icons/logo.png</file>
+    </qresource>
+</RCC>
