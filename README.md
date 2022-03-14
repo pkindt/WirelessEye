@@ -89,7 +89,7 @@ Here's a quick how-to on using WiFiEye:
 3. In the _visualization tab_, empirically select the range of CSI values in which you can see your events of interest
 4. When pressing the _record_ button, the CSI data is stored into a file. The filename can either be selected in the _settings_ tab, or will be automatically assigned based on the time and date. 
    The actual filename is shown in the console when recording starts.
-   WiFiEye supports 3 different formats for recording, which can be selected in the _settings_ tab. The actual file format is documented in [doc/fileformats.pdf](doc/fileformats.pdf).
+   WiFiEye supports 3 different formats for recording, which can be selected in the _settings_ tab. The actual file format is documented in [doc/fileFormats.pdf](doc/fileFormats.pdf).
 5. Real-Time export of the CSI data, e.g., to a classifier, can be initiated in the _Real-Time Classification_ tab. More on this is written below in a separate section.
 
 # Real-Time Export #
