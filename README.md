@@ -12,7 +12,8 @@ License
 -------
 Copyright 2022, Philipp H. Kindt.
 License: GPL v3, see [COPYING](COPYING)
-When using WiFiEye together with Nexmon, please also pay attention to the Nexmon license, see [https://github.com/seemoo-lab/nexmon_csi/blob/master/README.md](here).
+
+When using WiFiEye together with Nexmon, please also pay attention to the Nexmon license, see [here](https://github.com/seemoo-lab/nexmon_csi/blob/master/README.md).
 
 Getting Started
 ---------------
