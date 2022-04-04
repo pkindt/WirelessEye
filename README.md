@@ -105,8 +105,52 @@ classifiers, or needs to include multiple of them in one executable. The data fr
 A pair of scripts for accessing tensorflow to 1) train  a classifier using previously recorded data and 2) perform live classification using the real-time export mechanism is included in WiFiEye. 
 They are described below.
 
-# Accessing Tensorflow #
-Cristian, describe your scripts here.
+# Building Classification Models using Tensorflow #
+
+The follwoing two python scripts for creating and using a classification model using the Tensorflow machine learning framework are provided along with WiFiEye.
+ 
+ - scripts/model_generation.py:
+   This script is used for creating a machine learning model, e.g., for recognizing human activity using CSI data.
+   It contains multiple configuration parameters that need to be adjusted in the script. 
+ - scripts/realtime_classification.py:
+   This script can be executed from with WiFiEye to perform real-time classification. It reads the CSI data in real-time and queries a previously    	
+   generated model
+
+Prerequisites
+-------------
+We recommend Python 3.8. The following python modules need to be installed for these scripts to work.
+(The first three are included in Linux Mint, the others need to be installed via pip)
+ - matplotlib
+ - pandas
+ - seaborn
+ - tensorflow (type `python3.8 -m pip install tensorflow` in a terminal for installation)
+ - imblearn (type `python3.8 -m pip install imblearn` in a terminal for installation)
+ 
+Using model_generation.py
+-------------------------
+`model_generation.py` provides multiple configurable parameters, which need to be adjusted first.
+A (mostly reasonable) default value is assigned to each of them. The parameters to be adjusted can be found under the comment `# Settings` in the 
+script code. The following parameters need to be adjusted:
+   - `sampling_frequency`: The sampling frequency of the CSI data, i.e., the (average) number of WiFi frames per second.
+   - `seconds`: A time window (in seconds) of CSI data to be fed into the model
+   - `overlap`: ? Cristian
+   - `training_epochs`: The number of training epochs
+   - `time_window_size`: ? Cristian
+   - `labels`: An array of strings that contain all labels  
+   - `path_to_file`: Path to a file recorded in WiFiEye to be analyzed. It needs to be in the simple CSV format.
+ 
+After adjusting these options, the script is repeatedly executed with different recorded CSI files. Different files are specified by changing the
+`path_to_file` parameter each time. It is assumed that the data of a single CSV file belongs to one specific label. (Cristian, how is the label for this file provided?). Make sure that data is recorded in the *simple* CSV format. The model is stored in a file called `model.h5`. The model stored in this file can be queried using `realtime_classification.py`, which is described next.
+
+Using realtime_classification.py
+--------------------------------
+`realtime_classification.py` is called from within WiFiEye Studio. This can be done in the 'Real-Time Classification' tab. Use
+`python3.8` as the executable and `realtime_classification.py` as the argument. Adjust the number of classes to the length of the `labels` array in 
+ `model_generation.py` (for the default value in the script, this would be 4). 
+ The script will assign a counting number to the sting lables, which are imported back into WiFiEye. E.g., the first label in the `labels` string of
+ `model_generation.py` will be _0_, the second one _1_, the third one _2_,... 
+
+After `realtime_classification.py` has been executed, the _Classifier Output_ plot will be available and in sync with the CSI data.
 
 # Developing Plugins #
 WiFiEye supports plugins to process CSI data. A plugin is a simple C-file. It is complied independently from WiFiEye. 
