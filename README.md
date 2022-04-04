@@ -5,7 +5,7 @@ WiFiEye - an interactive real-time workflow for WiFi-based sensing
 
 with contributions from:
 - Cristian Turetta <cristian.turetta@univr.it> - Scripts to interface TensorFlow
-- Florenc Demrozia <cristian.turetta@univr.it> - Specification of timestamp format
+- Florenc Demrozi <florenc.demrozi@univr.it> - Specification of timestamp format
 
 
 License
