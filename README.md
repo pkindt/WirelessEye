@@ -52,7 +52,7 @@ WiFiEye consists of the following two pieces of software
    1. Download the following files from
       [here](https://github.com/seemoo-lab/nexmon_csi/commit/7e3f9f720e1eb12ef11afd855515981d5a3b715b)
 	  (don't clone using git - just download from there)
-	  - rc/csi.ucode.bcm43455c0.7_45_189.patch 
+	  - rc/csi.ucode.b_cm43455c0.7_45_189.patch 
 	  - src/csi_extractor.c 
    2. Replace these files in patches/bcm43455c0/7_45_189/nexmon_csi/src of your nexmo installation
    3. Recompile the firmware
@@ -144,12 +144,12 @@ After adjusting these options, the script needs to be executed repeatedly with d
 Using realtime_classification.py
 --------------------------------
 `realtime_classification.py` is called from within WiFiEye Studio. This can be done in the 'Real-Time Classification' tab. Use
-`python3.8` as the executable and `realtime_classification.py` as the argument. Adjust the number of classes to the length of the `labels` array in 
+`python3.8` as the executable and `realtime_classification.py` as the argument. Adjust the number of classes to the length of the _labels_ array in 
  `model_generation.py` (for the default value in the script, this would be 4). 
- The script will assign a counting number to the sting lables, which are imported back into WiFiEye. E.g., the first label in the `labels` string of
+ The script will assign a counting number to the sting lables, which are imported back into WiFiEye. E.g., the first label in the _labels_ string of
  `model_generation.py` will be _0_, the second one _1_, the third one _2_,... 
 
-After `realtime_classification.py` has been executed, the _Classifier Output_ plot will be available and in sync with the CSI data.
+After `realtime_classification.py` has been executed, the _Classifier Output_ plot will be available in WiFiEye Studio and in sync with the CSI data.
 
 # Developing Plugins #
 WiFiEye supports plugins to process CSI data. A plugin is a simple C-file. It is complied independently from WiFiEye. 
