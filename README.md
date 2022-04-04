@@ -57,9 +57,9 @@ WiFiEye consists of the following two pieces of software
    2. Replace these files in patches/bcm43455c0/7_45_189/nexmon_csi/src of your nexmo installation
    3. Recompile the firmware
       - in your nexmon folder:
-      source setup_env.sh
+      `source setup_env.sh`
       - in /patches/bcm43455c0/7_45_189/nexmon_csi/:
-      make install-firmware
+      `make install-firmware`
 
 
 2. Compiling and running CSIServer_ng
@@ -67,14 +67,14 @@ WiFiEye consists of the following two pieces of software
     WiFiEye contains a TCP server to access the CSI data from another computer, which is called CSIServer_ng. It needs to be
     compiled and run. For this purpose, do the follwoing on the Raspberry PI:
     1. Copy te CSIServer_ng folder to the Raspi
-    2. In the CSIServer_ng folder, type "make".
-    3. Run the CSI server by the command ./CSIServer
+    2. In the CSIServer_ng folder, type `make`.
+    3. Run the CSI server by the command `./CSIServer`
     4. It is recommended to configure Nexmon and run the CSI Server at startup of the Raspberry Pi.
     We recommend using rc.local. See [here](https://learn.sparkfun.com/tutorials/how-to-run-a-raspberry-pi-program-on-startup/method-1-rclocal) for how to do this.
  
 3. Compiling and Running WiFiEye Studio
-   1. In the folder "WiFiEye", type "make"
-   2. Run WiFiEyeStudio by typing ./WiFiEye
+   1. In the folder `WiFiEye`, type `make`
+   2. Run WiFiEyeStudio by typing `./wifieye`
 
 
 # Using WiFiEye Studio #
@@ -131,16 +131,15 @@ Using model_generation.py
 `model_generation.py` provides multiple configurable parameters, which need to be adjusted first.
 A (mostly reasonable) default value is assigned to each of them. The parameters to be adjusted can be found under the comment `# Settings` in the 
 script code. The following parameters need to be adjusted:
-   - `sampling_frequency`: The sampling frequency of the CSI data, i.e., the (average) number of WiFi frames per second.
-   - `seconds`: A time window (in seconds) of CSI data to be fed into the model
-   - `overlap`: ? Cristian
-   - `training_epochs`: The number of training epochs
-   - `time_window_size`: ? Cristian
-   - `labels`: An array of strings that contain all labels  
-   - `path_to_file`: Path to a file recorded in WiFiEye to be analyzed. It needs to be in the simple CSV format.
+   - _sampling_frequency_: The sampling frequency of the CSI data, i.e., the (average) number of WiFi frames per second.
+   - _seconds_: A time window (in seconds) of CSI data to be fed into the model
+   - _overlap_: ? Cristian
+   - _training_epochs_: The number of training epochs
+   - _time_window_size_: ? Cristian
+   - _labels_: An array of strings that contain all labels  
+   - _path_to_file_: Path to a file recorded in WiFiEye to be analyzed. It needs to be in the simple CSV format.
  
-After adjusting these options, the script is repeatedly executed with different recorded CSI files. Different files are specified by changing the
-`path_to_file` parameter each time. It is assumed that the data of a single CSV file belongs to one specific label. (Cristian, how is the label for this file provided?). Make sure that data is recorded in the *simple* CSV format. The model is stored in a file called `model.h5`. The model stored in this file can be queried using `realtime_classification.py`, which is described next.
+After adjusting these options, the script needs to be executed repeatedly with different previously recorded CSI files. Different files are specified by changing the `path_to_file` parameter each time. It is assumed that the data contained in a single CSV file belongs to one specific label. (Cristian, how is the label for each file provided?). Make sure that data is recorded in the *simple* CSV format. The model is stored in a file called `model.h5`. The model stored in this file can be queried using `realtime_classification.py`, which is described next.
 
 Using realtime_classification.py
 --------------------------------
