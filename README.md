@@ -175,5 +175,5 @@ Please also let us know if you'd like to contribute some code to our repository.
 # Acknowledgements #
 Thanks to Alejandro Masrur, Florenc Demrozi, Cristian Turetta, Graziano Pravadelli, Samarjit Chakraborty and Shengjie Xu for the pleasant interactions related to WiFiEye.
 
-# Known Issues '
+# Known Issues #
 - (Uncofirmed) In a longer experiment (continuously recording for 70+ hours), the resulting data file appeared to be malformed. It has yet to be confirmed whether this can be reproduced. 
