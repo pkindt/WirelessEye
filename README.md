@@ -129,7 +129,7 @@ We recommend Python 3.8. The following python modules need to be installed for t
 Using model_generation.py
 -------------------------
 `model_generation.py` provides multiple configurable parameters, which need to be adjusted first.
-A (mostly reasonable) default value is assigned to each of them. The parameters to be adjusted can be found under the comment `# Settings` in the 
+A (mostly reasonable) default value is assigned to each of them. The parameters to be adjusted can be found under the comment _# Settings_ in the 
 script code. The following parameters need to be adjusted:
    - _sampling_frequency_: The sampling frequency of the CSI data, i.e., the (average) number of WiFi frames per second.
    - _seconds_: A time window (in seconds) of CSI data to be fed into the model
