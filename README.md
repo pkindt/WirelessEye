@@ -10,7 +10,8 @@ with contributions from:
 
 License
 -------
-GPL v3, see [COPYING](COPYING)
+Copyright 2022, Philipp H. Kindt.
+License: GPL v3, see [COPYING](COPYING)
 
 Getting Started
 ---------------
