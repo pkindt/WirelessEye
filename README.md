@@ -136,7 +136,7 @@ A (mostly reasonable) default value is assigned to each of them. The parameters 
 script code. The following parameters need to be adjusted:
    - _sampling_frequency_: The sampling frequency of the CSI data, i.e., the (average) number of WiFi frames per second.
    - _seconds_: A time window (in seconds) of CSI data to be fed into the model
-   - _overlap_: The time of overlapping between two CSI data time window
+   - _overlap_: The time by which two adjacent CSI data time windows overlap
    - _training_epochs_: The number of training epochs 
    - _labels_: An array of strings that contain all labels  
    - _path_to_file_: Path to a file recorded in WiFiEye to be analyzed. It needs to be in the simple CSV format.
