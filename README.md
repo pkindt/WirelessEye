@@ -136,13 +136,12 @@ A (mostly reasonable) default value is assigned to each of them. The parameters 
 script code. The following parameters need to be adjusted:
    - _sampling_frequency_: The sampling frequency of the CSI data, i.e., the (average) number of WiFi frames per second.
    - _seconds_: A time window (in seconds) of CSI data to be fed into the model
-   - _overlap_: ? Cristian
-   - _training_epochs_: The number of training epochs
-   - _time_window_size_: ? Cristian
+   - _overlap_: The time of overlapping between two CSI data time window
+   - _training_epochs_: The number of training epochs 
    - _labels_: An array of strings that contain all labels  
    - _path_to_file_: Path to a file recorded in WiFiEye to be analyzed. It needs to be in the simple CSV format.
  
-After adjusting these options, the script needs to be executed repeatedly with different previously recorded CSI files. Different files are specified by changing the _path_to_file_ parameter each time. It is assumed that the data contained in a single CSV file belongs to one specific label. (Cristian, how is the label for each file provided?). Make sure that data is recorded in the *simple* CSV format. The model is stored in a file called `model.h5`. The model stored in this file can be queried using `realtime_classification.py`, which is described next.
+After adjusting these options, the script needs to be executed repeatedly with different previously recorded CSI files. Different files are specified by changing the _path_to_file_ parameter each time. It is assumed that the data contained in a single CSV file belongs to one specific label. Make sure that data is recorded in the *simple* CSV format. The model is stored in a file called `model.h5`. The model stored in this file can be queried using `realtime_classification.py`, which is described next.
 
 Using realtime_classification.py
 --------------------------------
