@@ -30,7 +30,7 @@
 
 #ifndef FILTERS_CSIFILTERGUIMANAGER_H_
 #define FILTERS_CSIFILTERGUIMANAGER_H_
-#define CSI_FILTER_PATH "filters"
+#define CSI_FILTER_PATH "src/filters"
 class MainWindow;
 
 /**
