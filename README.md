@@ -141,7 +141,29 @@ script code. The following parameters need to be adjusted:
    - _labels_: An array of strings that contain all labels  
    - _path_to_file_: Path to a file recorded in WiFiEye to be analyzed. It needs to be in the simple CSV format.
  
-After adjusting these options, the script needs to be executed repeatedly with different previously recorded CSI files. Different files are specified by changing the _path_to_file_ parameter each time. It is assumed that the data contained in a single CSV file belongs to one specific label. Make sure that data is recorded in the *simple* CSV format. The model is stored in a file called `model.h5`. The model stored in this file can be queried using `realtime_classification.py`, which is described next.
+After adjusting these options, the script needs to be executed repeatedly with different previously recorded CSI files. Different files are specified by changing the _path_to_file_ parameter each time. It is assumed that the data contained in a single CSV file belongs to one specific label. 
+
+Starting from a file like this example:
+
+| timestamp   | amplitude_sub<sub>1</sub>  |  amplitude_sub<sub>2</sub> |  amplitude_sub<sub>3</sub> | ... | amplitude_sub<sub>n</sub> | 
+| :---:       |:---:|:---:|:---:|:---:|:---:|
+|2021-10-22 14:29:39.314396|1.3608 | 1.3839 | 1.4003 | ... | 1.4230 |
+|2021-10-22 14:29:39.416798|1.3718 | 1.3932 | 1.4565 | ... | 1.4887 |
+|...|...|...|...|...|...|
+|2021-10-22 14:32:23.519207|1.3527 | 1.3794 | 1.4233 | ... | 1.4434 |
+|...|...|...|...|...|...|
+
+to put labels on a CSI record, you just have to add a column with the desired label. The label marks the activity/status of the environment in a certine time window. The label will be used by the model to recognize the CSI pattern for the respective activity/status of the environment described by the label. The final file sholud be similar to:
+
+| timestamp   | amplitude_sub<sub>1</sub>  |  amplitude_sub<sub>2</sub> |  amplitude_sub<sub>3</sub> | ... | amplitude_sub<sub>n</sub> | label |
+| :---:       |:---:|:---:|:---:|:---:|:---:| :---:|
+|2021-10-22 14:29:39.314396|1.3608 | 1.3839 | 1.4003 | ... | 1.4230 |walking|
+|2021-10-22 14:29:39.416798|1.3718 | 1.3932 | 1.4565 | ... | 1.4887 |walking|
+|...|...|...|...|...|...|walking|
+|2021-10-22 14:32:23.519207|1.3527 | 1.3794 | 1.4233 | ... | 1.4434 |sitting|
+|...|...|...|...|...|...|sitting|
+
+Make sure that data is recorded in the *simple* CSV format. The model is stored in a file called `model.h5`. The model stored in this file can be queried using `realtime_classification.py`, which is described next.
 
 Using realtime_classification.py
 --------------------------------
