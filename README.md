@@ -7,7 +7,7 @@ with contributions from:
 - Cristian Turetta <cristian.turetta@univr.it> - Scripts to interface TensorFlow
 - Florenc Demrozi <florenc.demrozi@univr.it> - Specification of timestamp format
 
-This software tool accompanies our  [paper][https://arxiv.org/abs/2204.01830] titled "WiFiEye -- Seeing over WiFi Made Accessible"
+This software tool accompanies our [paper](https://arxiv.org/abs/2204.01830) titled "WiFiEye -- Seeing over WiFi Made Accessible"
 
 License
 -------
@@ -16,7 +16,7 @@ License: GPL v3, see [COPYING](COPYING)
 
 When using WiFiEye together with Nexmon, please also pay attention to the Nexmon CSI license, see [here](https://github.com/seemoo-lab/nexmon_csi/blob/master/README.md).
 
-If you use this software, please consider citing our [paper][https://arxiv.org/abs/2204.01830]
+If you use this software, please consider citing our [paper](https://arxiv.org/abs/2204.01830)
 
 Getting Started
 ---------------
