@@ -282,7 +282,7 @@ void displayWidget::addDataForEntireFrame(double* data, int nSamples){
      * ... and chop of what now lies below 0 or above 1
      * to 2): Now rescale: color= color * 255;
      */
-    if(data > 0){
+    if(data[j] > 0){
       color = ((data[j] - lb)/(ub - lb)) * 255;
     }else{
       color = -((fabs(data[j]) + lb)/(ub - lb)) * 255;
