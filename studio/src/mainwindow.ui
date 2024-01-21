@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>WiFiEye Studio</string>
+   <string>WirelessEye Studio</string>
   </property>
   <property name="windowIcon">
    <iconset resource="csiguiresources.qrc">

@@ -2,11 +2,11 @@
  * mainwindow.h
  * Philipp H. Kindt <philipp.kindt@informatik.tu-chemnitz.de>
  *
- *  This file is part of WiFiEye.
+ *  This file is part of WirelessEye.
  *
- *  WiFiEye is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
- *  WiFiEye is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
- *  You should have received a copy of the GNU General Public License along with WiFiEye. If not, see <https://www.gnu.org/licenses/>.
+ *  WirelessEye is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *  WirelessEye is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with WirelessEye. If not, see <https://www.gnu.org/licenses/>.
  */
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
@@ -24,7 +24,7 @@ class MainWindow;
 }
 
 /**
- * \brief The main winow of WiFiEye Studio
+ * \brief The main winow of WirelessEye Studio
  */
 class MainWindow : public QMainWindow
 {
@@ -80,7 +80,7 @@ public:
     /**
      *  Processes the command line arguments when 2 parameters are given on the command line (url/IP of the server, recorded bandwidth)
      *  @parameters:
-     *  url: The hostname or IP address of WiFiEye studio
+     *  url: The hostname or IP address of WirelessEye studio
      *  bw: The bandwith that has been configured in Nexmon
      */
     void proccessCmdLineArguments(char* url,char* bw);
@@ -88,7 +88,7 @@ public:
     /**
      *  Processes the command line arguments when 3 parameters are given on the command line (url/IP of the server, recorded bandwidth)
      *  @parameters:
-     *  url: The hostname or IP address of WiFiEye studio
+     *  url: The hostname or IP address of WirelessEye studio
      *  bw: The bandwith that has been configured in Nexmon
      *  bwDisplay: The bandwith to display the CSI. Can differ from the bandwidth using which Nexmon captures
      */
@@ -96,7 +96,7 @@ public:
     /**
     *  Processes the command line arguments when 4 parameters are given on the command line (url/IP of the server, recorded bandwidth)
     *  @parameters:
-    *  url: The hostname or IP address of WiFiEye studio
+    *  url: The hostname or IP address of WirelessEye studio
     *  bw: The bandwith that has been configured in Nexmon
     *  bwDisplay: The bandwith to display the CSI. Can differ from the bandwidth using which Nexmon captures
     *  bwExport: The bandwith to export any CSI data. Can differ from the bandwidth using which Nexmon captures

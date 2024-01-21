@@ -3,18 +3,18 @@
 \usepackage{fancyvrb}
 \usepackage{hyperref}
 \usepackage{graphicx}
-\title{File/Data Formats in WifEye}
+\title{File/Data Formats in WirelessEye}
 \author{Philipp H. Kindt, philipp.kindt@informatik.tu-chemnitz.de}
 \begin{document}
 \maketitle
 	\section{Overview}
-WifEye provides the following 3 different file formats for exporting CSI data:
+WirelessEye provides the following 3 different file formats for exporting CSI data:
 \begin{itemize}
 	\item \textbf{Simple CSV Format}: A comma-separated value (CSV) format optimized for simplicity. It is the only format used for live-export (e.g., streaming data to an external program such as a classifier in real-time). It can also be used for recording data to files.
 	\item \textbf{Compact CSV Format}: A CSV format which demands only approximately 30\% of the space of the \textit{simple CSV} format. It can be used for recording data into files.
-	\item \textbf{WifEye Binary:} A non-standard, proprietary file format with minimalistic space requirements. It requires less than about 20\% of the space of the \textit{Simple CSV} format and only 60\% of the space of the \textit{Compact CSV} format. It can be used for recording data into files. 
+	\item \textbf{WirelessEye Binary:} A non-standard, proprietary file format with minimalistic space requirements. It requires less than about 20\% of the space of the \textit{Simple CSV} format and only 60\% of the space of the \textit{Compact CSV} format. It can be used for recording data into files. 
 \end{itemize}
-In addition, there is a dedicated exchange format to read classification results from a classifier into WifEye for the purpose of real-time annotations. Figure~\ref{fig:formatOverview} gives an overview on the different formats used in different data paths. This document describes all of these formats.
+In addition, there is a dedicated exchange format to read classification results from a classifier into WirelessEye for the purpose of real-time annotations. Figure~\ref{fig:formatOverview} gives an overview on the different formats used in different data paths. This document describes all of these formats.
 \begin{figure}
 	\centering
 	\vspace*{-.5cm}
@@ -78,13 +78,13 @@ Every line contains the following data (in this order, separated by semicolons):
 	\item The \textit{frame control} field as an integer between 0 and 255.
 	\item As many pairs of values of CSI amplitudes and phases as there are subcarriers.  Each amplitude or phase is represented by a floating point number. The decimal separator is a dot (``.''), there are 10 digits behind the dot.
 \end{enumerate}
-An example is omitted, since already one line of data would require excessive space in this document. You obtain an example by capturing a few frames using WifEye. The format is actually fully explained by the header.
+An example is omitted, since already one line of data would require excessive space in this document. You obtain an example by capturing a few frames using WirelessEye. The format is actually fully explained by the header.
 
-\section{WifEye Binary (.wbin) Format}
-The \textit{WifEye binary} format can be used for recording CSI data. Different from the other formats, the file ending is \textit{.wbin} instead of \textit{.csv}.
+\section{WirelessEye Binary (.wbin) Format}
+The \textit{WirelessEye binary} format can be used for recording CSI data. Different from the other formats, the file ending is \textit{.wbin} instead of \textit{.csv}.
 It is structured as follows.
 \begin{enumerate}
-	\item (12 Bytes) File header, consisting of the string ``WiFeyeBinary''.
+	\item (12 Bytes) File header, consisting of the string ``WirelessEyeBinary''.
 	\item (4 Bytes) The number of subcarriers as a 32-bit unsigned integer.
 	\item For every received frame:
 	\begin{enumerate}
@@ -106,13 +106,13 @@ struct timespec_16bytes{
 	uint64_t tv_nsec;
 };
 \end{verbatim}
-Figure~\ref{fig:wbinformat} provides an example of the WifEye binary format.
-A C-program to read this data can be found under the name \textit{readBinaryFormat.c} in the \textit{tools} folder of the WifEye repository.
+Figure~\ref{fig:wbinformat} provides an example of the WirelessEye binary format.
+A C-program to read this data can be found under the name \textit{readBinaryFormat.c} in the \textit{tools} folder of the WirelessEye repository.
 \begin{figure}
 \centering
 \vspace*{-.5cm}
 \includegraphics[width=0.5\textwidth]{images/wbinformat.png}
-\caption{Example of the Wifeye Binary (\textit{.wbin}) format.}
+\caption{Example of the WirelessEye Binary (\textit{.wbin}) format.}
 \label{fig:wbinformat}
 \end{figure}
 
@@ -122,7 +122,7 @@ The format for signaling classification results consists of pairs of the class n
 class0:confidence0:class1:confidence1:class2:confidence2,...
 \end{verbatim}
 Here, the numbers ($0,1,2,...)$ identify the classifier. 
-The class number is an integer and the highest possible class number needs to be defined in the settings of WifEye studio. The \textit{confidence} is a floating point value between $0$ (the classifier is not at all confident in the results) and $1$ (the classifier is 100 \% confident in the results). Each such classifier output is terminated by a newline. WifEye assumes that a classifier output belongs to all data since the previous output was received.
+The class number is an integer and the highest possible class number needs to be defined in the settings of WirelessEye studio. The \textit{confidence} is a floating point value between $0$ (the classifier is not at all confident in the results) and $1$ (the classifier is 100 \% confident in the results). Each such classifier output is terminated by a newline. WirelessEye assumes that a classifier output belongs to all data since the previous output was received.
 Example:
 \begin{verbatim}
 5:0.01:9:0.99

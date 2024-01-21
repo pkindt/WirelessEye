@@ -1,25 +1,25 @@
 /**
  * networkThread.h
- * Data management and processing in WiFiEye. This file coordinates the entire dataflow.
+ * Data management and processing in WirelessEye. This file coordinates the entire dataflow.
  *
  *  Nov. 2020, Philipp H. Kindt <philipp.kindt@informatik.tu-chemnitz.de>
  *
- *  This file is part of WiFiEye.
+ *  This file is part of WirelessEye.
  *
- *  WiFiEye is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
- *  WiFiEye is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
- *  You should have received a copy of the GNU General Public License along with WiFiEye. If not, see <https://www.gnu.org/licenses/>.
+ *  WirelessEye is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *  WirelessEye is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with WirelessEye. If not, see <https://www.gnu.org/licenses/>.
  *
  */
 #ifndef _NETWORK_THREAD_H
 #define _NETWORK_THREAD_H
-#define UDP_PORT 5500                           ///The UDP port of Nexmon. Only used when we directly stream data from the Raspberry without the CSIServer (and hence WiFiEye directly runs on the Raspi).
+#define UDP_PORT 5500                           ///The UDP port of Nexmon. Only used when we directly stream data from the Raspberry without the CSIServer (and hence WirelessEye directly runs on the Raspi).
 #define CSI_PORT 5501                           ///The port of the CSI Server from which we obtain the data
 #define HEADER_OFFSET 18                        ///18 bytes of a packet belong to the header
 #define RCV_BUF_LEN 4*256+HEADER_OFFSET+16      ///80 MHZ channel has 256 samples a 4 byte. Then we need HEADER_OFFSET for the header from nexmon and 16 bytes fo the timestamp. + 100 just for safety
 #define FILEBUF_LEN (10*1024)                   ///The length of the buffer to write data into a file. This should exceed the size of the CSI-rleated data belonging to one WiFi frame
 #define CSI_CONTAINS_RSSI true                  ///If the Nexmon has been additionally pateched (see README.md) to also provide RSSI, then set this to true.
-#define DATA_EXCHANGE_THROUGH_QT_SIGNALS false  ///If true, we don't directly call functions belonging to another thread but excessively use QT signals instead. No reason to do this in the current version of WiFiEye, since this will hamper the performance.
+#define DATA_EXCHANGE_THROUGH_QT_SIGNALS false  ///If true, we don't directly call functions belonging to another thread but excessively use QT signals instead. No reason to do this in the current version of WirelessEye, since this will hamper the performance.
 #define DIFFERENT_MACS_IN_FILTER_FOR_DISPLAY_AND_LIVE_EXPORT true       ///Support different MACS in the filter plugins for live export and for displaying. This is realized by adding an additional byte to the MAC, which indicates
                                                                         ///whether a filter is called for displaying or for live export. If this is disactivated, all filters that treat the input as a time series (e.g., exponential smoothing) get disturbed by being called twice in a row for the same MAC.
                                                                         ///Only disadvantage of activating this: The MAC address the filters ``see'' is not the actual MAC, since one additional byte is appended.
@@ -47,7 +47,7 @@ struct timespec_16bytes{
 class MainWindow;
 
 /**
- * This class implements the entire data management and processing in WiFiEye, i.e., streaming from the Raspi,
+ * This class implements the entire data management and processing in WirelessEye, i.e., streaming from the Raspi,
  * MAC filtering, splitting the data into amplitude and phase, executing the filter pipeline, streaming data to files, to display widgets and to the classifierWRThread for real-time export.
  */
 class networkThread: public QObject{

@@ -1,16 +1,16 @@
 /**
  * networkThread.cpp
- * This file implements the data management and processing in WiFiEye, i.e., streaming from the Raspi,
+ * This file implements the data management and processing in WirelessEye, i.e., streaming from the Raspi,
  * MAC filtering, splitting the data into amplitude and phase, executing the filter pipeline, exporting to files, to display widgets and to the classifierWRThread for real-time classification.
  *
  *
  *  Nov. 2020, Philipp H. Kindt <philipp.kindt@informatik.tu-chemnitz.de>
  *
- *  This file is part of WiFiEye.
+ *  This file is part of WirelessEye.
  *
- *  WiFiEye is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
- *  WiFiEye is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
- *  You should have received a copy of the GNU General Public License along with WiFiEye. If not, see <https://www.gnu.org/licenses/>.
+ *  WirelessEye is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *  WirelessEye is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with WirelessEye. If not, see <https://www.gnu.org/licenses/>.
  */
 
 #include <iostream>

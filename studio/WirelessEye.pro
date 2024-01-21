@@ -8,7 +8,7 @@ QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = wifieye
+TARGET = WirelessEye
 TEMPLATE = app
 CXXFLAGS += -g3
 CFLAGS += -g3
@@ -36,3 +36,4 @@ FORMS += \
 QMAKE_PRE_LINK += cd src/filters && make && cd -
 RESOURCES += \
     src/csiguiresources.qrc
+
