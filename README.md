@@ -31,6 +31,19 @@ To perform WiFi-based sensing using WirelessEye, you need
       - QT library version 5
     - One or multiple standard WiFi APs to create some WiFi signals to capture
 
+# Installation in a Nutshell #
+To install WirelessEye, please follow the following steps. Note that your Raspberry Pi also needs to be prepared, if it is not already running Nexmon (see next section).
+
+1. Download WirelessEye:
+   `git clone https://github.com/pkindt/WirelessEye.git`
+2. Go to the WirelessEye/studio subdirectory:
+   `cd WirelessEye/studio`
+3. Build WirelessEye:
+    `make`
+   If you get any error message during build, ensure that all prerequisites are fulfilled (i.e., the QT developer packages are installed).
+4. Run WirelessEye:
+   `./WirelessEye
+   `
 # Components #
 
 WirelessEye consists of the following two pieces of software 
