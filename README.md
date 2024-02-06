@@ -24,12 +24,12 @@ Getting Started
 
 # Preqrequisites #
 To perform WiFi-based sensing using WirelessEye, you need
-    - A Raspberry PI 4B with Nexmon firmware (see below)
-    - A Linux PC or Laptop (e.g., Linux Mint)
-      - the GNU C compiler (GCC)
-      - GNU make
-      - QT library version 5
-    - One or multiple standard WiFi APs to create some WiFi signals to capture
+- A Raspberry PI 4B with Nexmon firmware (see below)
+- A Linux PC or Laptop (e.g., Linux Mint)
+- The GNU C compiler (GCC)
+- GNU make
+- QT library version 5
+- One or multiple standard WiFi APs to create some WiFi signals to capture
 
 # Installation in a Nutshell #
 To install WirelessEye, please follow the following steps. Note that your Raspberry Pi also needs to be prepared, if it is not already running Nexmon (see next section).
@@ -72,7 +72,7 @@ WirelessEye consists of the following two pieces of software
    1. Download the following files from
       [here](https://github.com/seemoo-lab/nexmon_csi/commit/7e3f9f720e1eb12ef11afd855515981d5a3b715b)
 	  (don't clone using git - just download from there)
-	  - rc/csi.ucode.b_cm43455c0.7_45_189.patch 
+	  - src/csi.ucode.bcm43455c0.7_45_189.patch
 	  - src/csi_extractor.c 
    2. Replace these files in patches/bcm43455c0/7_45_189/nexmon_csi/src of your nexmo installation
    3. Recompile the firmware
