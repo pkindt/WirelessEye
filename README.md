@@ -22,7 +22,7 @@ If you use this software in your research, please consider citing our [paper](ht
 Getting Started
 ---------------
 
-# Preqrequisites #
+# Prerequisites #
 To perform WiFi-based sensing using WirelessEye, you need
 - A Raspberry PI 4B [with kernel version 4.19](https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-14/) with Nexmon firmware (see below) 
 - A Linux PC or Laptop (e.g., Linux Mint)
