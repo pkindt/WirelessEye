@@ -26,8 +26,8 @@ Getting Started
 To perform WiFi-based sensing using WirelessEye, you need
 - A Raspberry PI 4B [with kernel version 4.19](https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-14/) with Nexmon firmware (see below) 
 - A Linux PC or Laptop (e.g., Linux Mint)
-- The GNU C compiler (GCC)
-- GNU make
+- The GNU C compiler (GCC) for PC and Raspberry Pi
+- GNU make for PC and Raspberry Pi
 - QT library version 5 for PC
 - One or multiple standard WiFi APs to create some WiFi signals to capture
 
