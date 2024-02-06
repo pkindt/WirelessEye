@@ -28,7 +28,7 @@ To perform WiFi-based sensing using WirelessEye, you need
 - A Linux PC or Laptop (e.g., Linux Mint)
 - The GNU C compiler (GCC)
 - GNU make
-- QT library version 5
+- QT library version 5 for PC
 - One or multiple standard WiFi APs to create some WiFi signals to capture
 
 # Installation in a Nutshell #
