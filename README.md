@@ -57,7 +57,7 @@ WirelessEye consists of the following two pieces of software
 
 
 # Preparing the Raspberry Pi #
-0. Flash a Nexmon compatible Raspberry Pi OS version, you can download it from [here](https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-14/).
+0. Flash a Nexmon compatible Raspberry Pi OS version, you can download it from [here](https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-14/). Remember, don't upgrade the kernel version.
 1. Installing Nexmon
    Before using WirelessEye, the Raspberry Pi has to be prepared to run Nexmon firmware patches. For this purpose, configure and run the nexmon CSI tool as describe here:
    [Nexmon CSI Repository](https://github.com/seemoo-lab/nexmon_csi for details)
