@@ -24,7 +24,7 @@ Getting Started
 
 # Prerequisites #
 To perform WiFi-based sensing using WirelessEye, you need
-- A Raspberry PI 4B [with kernel version 4.19](https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-14/) with Nexmon firmware (see below) 
+- A Raspberry PI 4B [with kernel version 5.10](https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2022-01-28/) with Nexmon firmware (see below) 
 - A Linux PC or Laptop (e.g., Linux Mint)
 - The GNU C compiler (GCC) for PC and Raspberry Pi
 - GNU make for PC and Raspberry Pi
@@ -58,32 +58,14 @@ WirelessEye consists of the following two pieces of software
 
 
 # Preparing the Raspberry Pi #
-0. Flash a Nexmon compatible Raspberry Pi OS version, you can download it from [here](https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-14/). Remember, don't upgrade the kernel version.
-1. Installing Nexmon
-   Before using WirelessEye, the Raspberry Pi has to be prepared to run Nexmon firmware patches. For this purpose, configure and run the nexmon CSI tool as describe here:
-   [Nexmon CSI Repository](https://github.com/seemoo-lab/nexmon_csi for details)
+1. Flash a Nexmon compatible Raspberry Pi OS version, you can download it from [here](https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-14/).
+   Never upgrade the kernel version.
+   
+2. Installing Nexmon
+   Before using WirelessEye, the Raspberry Pi has to be prepared to run Nexmon firmware patches. For this purpose, configure and run the nexmon CSI tool as we describe [here](PreparingTheRaspberry.md). Additional
+   descriptions can be found in the [Nexmon CSI Repository](https://github.com/seemoo-lab/nexmon_csi).
 
-   By default, no RSSI is obtained from this firmware. WirelessEye expects RSSI by default and will hence fail if none is received.
-   Therefore, either switch off RSSI processing in networkThread.h by setting the CSI_CONTAINS_RSSI to false:
-
-   #define CSI_CONTAINS_RSSI false
-
-   Alternatively, install a patched version of Nexmon that supports RSSI. This is usually the much better alternative. This works as follows.
-
-   1. Download the following files from
-      [here](https://github.com/seemoo-lab/nexmon_csi/commit/7e3f9f720e1eb12ef11afd855515981d5a3b715b)
-	  (don't clone using git - just download from there)
-	  - src/csi.ucode.bcm43455c0.7_45_189.patch
-	  - src/csi_extractor.c 
-   2. Replace these files in patches/bcm43455c0/7_45_189/nexmon_csi/src of your nexmo installation
-   3. Recompile the firmware
-      - in your nexmon folder:
-      `source setup_env.sh`
-      - in /patches/bcm43455c0/7_45_189/nexmon_csi/:
-      `make install-firmware`
-
-
-2. Compiling and running CSIServer_ng
+3. Compiling and running CSIServer_ng
 
     WirelessEye contains a TCP server to access the CSI data from another computer, which is called CSIServer_ng. It needs to be
     compiled and run. For this purpose, do the follwoing on the Raspberry PI:
@@ -93,7 +75,7 @@ WirelessEye consists of the following two pieces of software
     4. It is recommended to configure Nexmon and run the CSI Server at startup of the Raspberry Pi.
     We recommend using rc.local. See [here](https://learn.sparkfun.com/tutorials/how-to-run-a-raspberry-pi-program-on-startup/method-1-rclocal) for how to do this.
  
-3. Compiling and Running WirelessEye Studio
+5. Compiling and Running WirelessEye Studio
    1. In the folder `WirelessEye`, type `make`
    2. Run WirelessEyeStudio by typing `./WirelessEye`
 
