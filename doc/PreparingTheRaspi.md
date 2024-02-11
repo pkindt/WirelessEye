@@ -228,20 +228,23 @@ echo "e.g.: ./scan_wifi.sh 1 20"
 exit 1
 fi
 
-rfkill unblock wlan
 
-#command (mostly) according to: https://github.com/seemoo-lab/nexmon_csi/
+rfkill unblock wlan
+ifconfig wlan0 up
+
+#command (mostly)according to: https://github.com/seemoo-lab/nexmon_csi/
 iw phy phy0 interface add mon type monitor
 
 ifconfig mon up
 
+
 #command (mostly)according to: https://github.com/seemoo-lab/nexmon_csi/. One spatial stream, one core.
 nexutil -Iwlan0 -s500 -l50 -b -v`makecsiparams -c $1/$2 -N 1 -C 1` 
-ifconfig wlan0 up
+
 ```
 
 You can now make this script executable by tying:
-`chmod +x scan_wifi.sh
+`chmod +x scan_wifi.sh`
 
 To make Nexmon listen to channel 1 with a bandwith of 20 MHz, please type
 `./scan_wifi.sh 1 20`
