@@ -32,7 +32,7 @@ To perform WiFi-based sensing using WirelessEye, you need
 - One or multiple standard WiFi APs to create some WiFi signals to capture
 
 # Installation in a Nutshell #
-To install WirelessEye, please follow the following steps. Note that your Raspberry Pi also needs to be prepared, if it is not already running Nexmon (see next section).
+To install WirelessEye, please follow the following steps. Note that your Raspberry Pi also needs to be prepared before running nexmon, if it is not already running Nexmon (see next section).
 
 1. Download WirelessEye:
    `git clone https://github.com/pkindt/WirelessEye.git`
@@ -62,7 +62,7 @@ WirelessEye consists of the following two pieces of software
    Never upgrade the kernel version.
    
 2. Installing Nexmon
-   Before using WirelessEye, the Raspberry Pi has to be prepared to run Nexmon firmware patches. For this purpose, configure and run the nexmon CSI tool as we describe [here](PreparingTheRaspberry.md). Additional
+   Before using WirelessEye, the Raspberry Pi has to be prepared to run Nexmon firmware patches. For this purpose, configure and run the nexmon CSI tool as we describe [here](doc/PreparingTheRaspi.md). Additional
    descriptions can be found in the [Nexmon CSI Repository](https://github.com/seemoo-lab/nexmon_csi).
 
 3. Compiling and running CSIServer_ng
@@ -198,3 +198,15 @@ Thanks to Alejandro Masrur, Florenc Demrozi, Cristian Turetta, Graziano Pravadel
 
 # Known Issues #
 - (Uncofirmed) In a longer experiment (continuously recording for 70+ hours), the resulting data file appeared to be malformed. It has yet to be confirmed whether this can be reproduced. 
+
+# Additional Ressources #
+- P Kindt, C. Turetta, F. Demrozi, A. Masrur, G. Pravadell, and S. Chakraborty.
+  “Wirelesseye: - seeing over wifi made accessible,” in
+  2024 IEEE International Conference on Pervasive Computing and Communications Workshops and other Affiliated Events (PerCom Workshops)
+- F. Gringoli, M. Schulz, J. Link, and M. Hollick.
+  “Free your CSI: A channel state information extraction platform for modern Wi-Fi chipsets”
+  in International Workshop on Wireless Network Testbeds, Experimental
+  Evaluation & Characterization (WiNTECH), 2019, p. 21–28.
+- [ M. Schulz, D. Wegemer, and M. Hollick. (2017) Nexmon: The C-based firmware patching framework (Repository)](https://github.com/seemoo-lab/nexmon)
+- [Nexmon CSI Respository](https://github.com/seemoo-lab/nexmon_csi/)
+  
