@@ -32,7 +32,7 @@ To perform WiFi-based sensing using WirelessEye, you need
 - One or multiple standard WiFi APs to create some WiFi signals to capture
 
 # Installation in a Nutshell #
-To install WirelessEye, please follow the following steps. Note that your Raspberry Pi also needs to be prepared before running nexmon, if it is not already running Nexmon (see next section).
+To install WirelessEye, please follow the following steps. Note that your Raspberry Pi also needs to be prepared before running WirelessEye, if it is not already running Nexmon (see next section).
 
 1. Download WirelessEye:
    `git clone https://github.com/pkindt/WirelessEye.git`
@@ -62,7 +62,7 @@ WirelessEye consists of the following two pieces of software
    Never upgrade the kernel version.
    
 2. Installing Nexmon
-   Before using WirelessEye, the Raspberry Pi has to be prepared to run Nexmon firmware patches. For this purpose, configure and run the nexmon CSI tool as we describe [here](doc/PreparingTheRaspi.md). Additional
+   Before using WirelessEye, the Raspberry Pi has to be prepared to run Nexmon firmware patches. For this purpose, configure and run the Nexmon CSI tools, as we describe in detail [here](doc/PreparingTheRaspi.md). Additional
    descriptions can be found in the [Nexmon CSI Repository](https://github.com/seemoo-lab/nexmon_csi).
 
 3. Compiling and running CSIServer_ng
@@ -72,14 +72,51 @@ WirelessEye consists of the following two pieces of software
     1. Copy te CSIServer_ng folder to the Raspi
     2. In the CSIServer_ng folder, type `make`.
     3. Run the CSI server by the command `./CSIServer`
-    4. It is recommended to configure Nexmon and run the CSI Server at startup of the Raspberry Pi.
-    We recommend using rc.local. See [here](https://learn.sparkfun.com/tutorials/how-to-run-a-raspberry-pi-program-on-startup/method-1-rclocal) for how to do this.
- 
-5. Compiling and Running WirelessEye Studio
+    4. (Optional) It is recommended to configure Nexmon and run the CSI Server at startup of the Raspberry Pi.
+       See [here](https://learn.sparkfun.com/tutorials/how-to-run-a-raspberry-pi-program-on-startup/method-1-rclocal) for more installation how to do this.
+       We recommend using the following script, which you can place into your home directory:
+       ```
+       #!/bin/bash
+       if [ "$#" -ne 2 ]
+       then
+       echo "usage: ./scan_wifi.sh channel bandwith"
+       echo "e.g.: ./scan_wifi.sh 1 20"
+       exit 1
+       fi
+
+       rfkill unblock wlan
+       ifconfig wlan0 up
+
+       #command (mostly) according to: https://github.com/seemoo-lab/nexmon_csi/
+       iw phy phy0 interface add mon type monitor
+    
+       ifconfig mon up
+
+       #command (mostly) according to: https://github.com/seemoo-lab/nexmon_csi/. One spatial stream, one core.
+       nexutil -Iwlan0 -s500 -l50 -b -v`makecsiparams -c $1/$2 -N 1 -C 1` 
+       ```
+       Safe this script as <i>scan_wifi.sh</i> in your home-directory (e.g., /home/pi) and make it executable using the follwing command:
+       ```
+       chmod +x scan_wifi.sh
+       ```
+       You can now make nexmon capture e.g., on channel 1 using a bandwith of 20 MHz as follows.
+       ```
+       ./scan_wifi.sh 1 20
+       ```
+       To make Nexmon start capturing during startup and to start the CSI server, put the following two lines into your file <i>/etc/rc.local</i> (we recommend putting this code towards the end of the file, right before the last line containing <i>exit</i>):
+       ```
+       /home/pi/scan_wifi.sh 1 20
+       /home/pi/WirelessEye/CSIServer_ng/CSIServer &
+       ```
+       This code assumes that scan_wifi.sh lies in <i>/home/pi</i> and the CSI Server in <i>/home/pi/WirelessEye/CSIServer_ng</i>. Adjust these paths if necessary.
+
+5. Compiling and Running WirelessEye Studio on your PC/laptop
    1. In the folder `WirelessEye`, type `make`
    2. Run WirelessEyeStudio by typing `./WirelessEye`
-
-
+   3. (Optional) It is possible to also run this directly on the Raspberry Pi. For this purpose, you need to install the QT library developer package onto your Raspberry Pi: 
+      ```
+      apt install qtbase5-dev 
+      ```
 # Using WirelessEye Studio #
 
 You can find a good overview on the functionality provided by WirelessEye in our paper. 
@@ -87,7 +124,7 @@ When hovering the mouse over some object, a quick description in shown in the st
 
 Here's a quick how-to on using WirelessEye:
 
-1. In the tab _settings->connection_, enter the IP address of hostname of your Raspberry Pi
+1. In the tab _settings->connection_, enter the IP address of hostname of your Raspberry Pi. In _settings->CSI, adjust the bandwith you selected when running Nexmon, e.g., via scan_wifi.sh 
 2. In the tab _visualization_, click _connect_. Upon success, the text in the button will change to "connected" and data is being streamed from the Raspberry Pi
 3. In the _visualization tab_, empirically select the range of CSI values in which you can see your events of interest
 4. When pressing the _record_ button, the CSI data is stored into a file. The filename can either be selected in the _settings_ tab, or will be automatically assigned based on the time and date. 
